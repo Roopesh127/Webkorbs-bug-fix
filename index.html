@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateNumericInput(event) {
+            var inputValue = event.target.value;
+
+            // Allowing only numeric characters and limiting length to 15 digits
+            if (!/^\d{0,15}$/.test(inputValue)) {
+                event.preventDefault();
+                event.target.value = inputValue.replace(/\D/g, '').slice(0, 15);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <form action="">
+            <input type="tel" placeholder="Enter Your Mobile Number" oninput="validateNumericInput(event)">
+        </form>
+    </div>
+</body>
+</html>
